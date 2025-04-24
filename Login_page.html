@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Campus Login</title>
+  <link rel="stylesheet" href="login_styles.css">
+</head>
+<body>
+  <div class="login-container">
+    <div class="image-section"></div>
+    <div class="form-section">
+      <form id="loginForm">
+        <h2>Campus Login</h2>
+        <div>
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="Enter your name" required>
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        </div>
+        <div>
+          <label for="role">Your Role</label>
+          <select id="role" name="role" required>
+            <option value="">Select role</option>
+            <option value="student">Student</option>
+            <option value="faculty">Faculty</option>
+            <option value="admin">Admin</option>
+            <option value="maintenance">Maintenance Staff</option>
+          </select>
+        </div>
+        <div>
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="Enter your password" required>
+        </div>
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  </div>
+  <script src="login_script.js"></script>
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const role = document.getElementById('role').value;
+      const password = document.getElementById('password').value;
+
+      console.log(`Logging in: ${name}, ${email}, ${role}`);
+      alert(`Login successful! Welcome, ${name} (${role})`);
+
+      // Simulate redirect to home page
+      window.location.href = 'index.html';
+    });
+  </script>
+</body>
+</html>
