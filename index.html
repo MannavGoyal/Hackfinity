@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Campus Resource Optimizer</title>
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>Campus Resource Optimizer</h1>
+    <div class="user-profile">👤 Admin ▾</div>
+  </header>
+
+  <main class="main-container">
+    <section class="quick-stats">
+      <div class="stat-card">📅 Bookings Today: <span>8</span></div>
+      <div class="stat-card">✅ Classrooms Available Now: <span>12</span></div>
+      <div class="stat-card">⚠️ Conflicts Detected: <span>1</span></div>
+    </section>
+
+    <section class="grid-buttons">
+      <div class="card" onclick="goToBookingForm()">📅 Book a Room</div>
+      <div class="card" onclick="goToAvailability()">🔍 Check Availability</div>
+      <div class="card" onclick="goToMyBookings()">📖 My Bookings</div>
+      <div class="card" onclick="goToStats()">📊 Admin Panel</div>
+      <div class="card" onclick="goToSettings()">⚙️ Settings</div>
+    </section>
+
+    <section class="bottom-panels">
+      <div class="calendar-panel">
+        <h3>🗓️ This Week's Schedule</h3>
+        <p>[Mini calendar or static table preview here]</p>
+      </div>
+      <div class="activity-log">
+        <h3>🛎️ Recent Activity</h3>
+        <ul>
+          <li>🔒 Lab B booked by Dr. Mehta</li>
+          <li>🎓 Hall 2 reserved for Seminar</li>
+          <li>⚠️ Lab C double-booked — flagged</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <script src="scripts/dashboard.js"></script>
+</body>
+</html>
