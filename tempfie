@@ -18,28 +18,20 @@
 
   document.getElementById("registerForm").addEventListener("submit", async (e) => {
     e.preventDefault();
+<h2>Register a New User</h2>
+<form id="registerForm">
+  <input type="text" id="fullName" placeholder="Full Name" required><br>
+  <input type="email" id="email" placeholder="Email" required><br>
+  
+  <select id="role" required>
+    <option value="">Select Role</option>
+    <option value="admin">Admin</option>
+    <option value="faculty">Faculty</option>
+    <option value="student">Student</option>
+    <option value="maintenance">Maintenance Staff</option>
+  </select><br>
 
-    const fullName = document.getElementById("fullName").value;
-    const email = document.getElementById("email").value;
-    const role = document.getElementById("role").value;
-    const password = document.getElementById("password").value;
+  <input type="password" id="password" placeholder="Password" required><br>
+  <button type="submit">Register User</button>
+</form>
 
-    try {
-      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-      const user = userCredential.user;
-
-      // Save additional user data in Firestore
-      await setDoc(doc(db, "users", user.uid), {
-        fullName,
-        email,
-        role
-      });
-
-      alert("✅ User registered successfully");
-      document.getElementById("registerForm").reset();
-    } catch (error) {
-      console.error("Registration Error:", error);
-      alert("❌ Error registering user: " + error.message);
-    }
-  });
-</script>
